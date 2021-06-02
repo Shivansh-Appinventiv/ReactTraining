@@ -1,0 +1,175 @@
+.assignContainer {
+  height: 100vh;
+  width: 100vw;
+  background-color: #e6ebee;
+  display: flex;
+  align-items: center;
+}
+
+.assignWrapper {
+  margin: 0 auto;
+  width: 1400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 50px 0 50px 0;
+  border-radius: 40px;
+  background: rgba(254, 255, 255, 255);
+}
+
+.cardOneContainer {
+  width: 350px;
+  color: white;
+  border-radius: 20px;
+  padding: 50px 0px 70px 0px;
+  background: rgba(79, 71, 183, 255);
+}
+
+.cardOneWrapper {
+  width: 250px;
+  margin: 0 auto;
+}
+
+.cardTitleOne {
+  font-size: 40px;
+  line-height: 1;
+}
+
+.cardBodyOne {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cardBodyOne p {
+  margin: 20px 0px;
+}
+
+.cardFooterOne {
+  margin: 100px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardFooterOne img {
+  height: auto;
+  width: 200px;
+}
+
+.cardTwoContainer,
+.cardThreeContainer {
+  width: 400px;
+}
+
+.cardTwoTitle {
+  font-size: 40px;
+  line-height: 1;
+  margin: 50px 0;
+}
+
+.cardContainer {
+  padding: 30px 20px 20px 20px;
+  border-radius: 20px;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 0 40px 0;
+}
+
+.headerLeft {
+  font-size: 30px;
+  line-height: 1;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.headerRight {
+  line-height: 1;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.headerRight span {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.underline {
+  margin-top: 22px;
+  border: 2px solid;
+  border-radius: 2px;
+  width: 22px;
+}
+
+.itemHead {
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 40px 0;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 40px 60px 0;
+  font-size: 16px;
+  height: 200px;
+}
+
+.listContainer li {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 20px 0;
+}
+
+.listContainer li .listStyle {
+  margin: 0 20px 0 0;
+  padding: 5px 0 0 0;
+}
+
+.tickIcon {
+  height: 7px;
+  width: 12px;
+  border: 2px solid;
+  border-color: transparent transparent black black;
+  transform: rotate(-45deg);
+}
+
+.cardFootDes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  margin: 20px 0 20px 0;
+}
+
+.cardButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 16px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+
+.cardThreeTitle {
+  height: 80px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 50px 0;
+  font-weight: bold;
+}
