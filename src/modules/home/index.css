@@ -1,0 +1,17 @@
+.homeContainer{
+    height: 100vh;
+    width: 100vw;
+    background-color: #ccc;
+}
+
+.homeContainer h3{
+    color: yellow;
+}
+
+.h1tag{
+    color: red;
+}
+
+#h2tag{
+    color: blue;
+}
