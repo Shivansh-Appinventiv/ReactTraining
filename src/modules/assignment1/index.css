@@ -1,6 +1,6 @@
 .assignContainer {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #e6ebee;
   display: flex;
   align-items: center;

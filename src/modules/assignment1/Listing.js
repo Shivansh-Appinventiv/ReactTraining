@@ -6,9 +6,9 @@ class Listing extends React.Component {
     return (
       <div>
         <ul className={"listContainer"}>
-          {input.listItem.map((text) => {
+          {input.listItem.map((text,key) => {
             return (
-              <li>
+              <li key={key}>
                 <div className={"listStyle"}>
                   <div
                     className={"tickIcon"}

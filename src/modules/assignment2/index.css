@@ -1,0 +1,114 @@
+.wrapper {
+  margin-top: 100px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.innerWrapper {
+  width: 700px;
+  border-radius: 20px;
+  opacity: 0.65;
+  font-family: "Ubuntu";
+}
+
+.headerContainer {
+  position: relative;
+  border-radius: 20px;
+  height: 300px;
+}
+
+.headerContainer img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 300px;
+  width: 100%;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.headerContainer .headerContainerText {
+  position: absolute;
+  left: 40px;
+  top: 60px;
+  font-size: 40px;
+  color: #10def5;
+  font-weight: bolder;
+}
+
+.headerContainer .headerContainerText span {
+  color: white;
+  font-weight: lighter;
+  line-height: 40px;
+}
+
+.bodyContainer {
+  width: 100%;
+}
+.bodyContainer ul {
+  list-style: none;
+}
+
+.bodyContainer ul li {
+  padding: 25px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bodyContainer ul li:nth-child(2n + 1) {
+  background: rgba(1, 196, 231, 0.8);
+}
+
+.bodyContainer ul li:nth-child(2n) {
+  background: rgba(2, 176, 210, 0.8);
+}
+
+.bodyContainer ul li .upImage {
+  margin: 0 30px 0 0;
+}
+
+.bodyContainer ul li .downImage {
+  margin: 0 0 0 30px;
+}
+
+.bodyContainer ul li .sideImage img {
+  height: 100px;
+  width: 100px;
+}
+
+.bodyContainer ul li .sideText {
+  width: 410px;
+}
+
+.bodyContainer ul li .sideText .sideTextHeading {
+  font-size: 25px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.footerContainer {
+  background-color: #05295d;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.footerContainer span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px 0 0;
+  font-size: 12px;
+}
+
+.footerContainer img {
+  height: 30px;
+  width: 30px;
+  color: white;
+  margin-right: 10px;
+}
+.footerContainer .divider{
+    font-size: 20px;
+}
