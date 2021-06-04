@@ -9,6 +9,7 @@ import bitImage from "./assets/images/cliIcon.png";
 import bootstrapIcon from "./assets/images/bootstrapIcon.png";
 import skypeIcon from "./assets/images/skypeIcon.svg";
 import emailIcon from "./assets/images/emailIcon.svg";
+import ListItem from "../../components/listItem";
 
 const listItems = [
   {
@@ -83,6 +84,26 @@ const listItems = [
 ];
 
 export default class Assignment2 extends React.Component {
+  renderList({ id, img, imgText, heading, headingText }) {
+    return (
+      <div className={"listBox"}>
+        <div className="listItem">
+          <div className={"sideText"}>
+            <div className={"sideTextHeading"}>
+              {id}
+              {") "}
+              {heading}
+            </div>
+            <div className={"sideTextBody"}>{headingText}</div>
+          </div>
+          <div className={`sideImage downImage`}>
+            <img src={img} alt={imgText} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className={"wrapper"}>
@@ -102,47 +123,13 @@ export default class Assignment2 extends React.Component {
             </div>
           </div>
           <div className={"bodyContainer"}>
-            <ul>
-              {listItems.map((value) => {
-                if (value.id % 2) {
-                  return (
-                    <li key={value.id}>
-                      <div className={`sideImage upImage`}>
-                        <img src={value.img} alt={value.imgText} />
-                      </div>
-                      <div className={"sideText"}>
-                        <div className={"sideTextHeading"}>
-                          {value.id}
-                          {") "}
-                          {value.heading}
-                        </div>
-                        <div className={"sideTextBody"}>
-                          {value.headingText}
-                        </div>
-                      </div>
-                    </li>
-                  );
-                } else {
-                  return (
-                    <li key={value.id}>
-                      <div className={"sideText"}>
-                        <div className={"sideTextHeading"}>
-                          {value.id}
-                          {") "}
-                          {value.heading}
-                        </div>
-                        <div className={"sideTextBody"}>
-                          {value.headingText}
-                        </div>
-                      </div>
-                      <div className={`sideImage downImage`}>
-                        <img src={value.img} alt={value.imgText} />
-                      </div>
-                    </li>
-                  );
-                }
-              })}
-            </ul>
+            {listItems.map((value) => {
+              if (value.id % 2) {
+                return <ListItem item={value} />;
+              } else {
+                return this.renderList(value);
+              }
+            })}
           </div>
           <div className={"footerContainer"}>
             <span>
