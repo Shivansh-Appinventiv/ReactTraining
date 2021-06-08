@@ -1,0 +1,1101 @@
+@font-face {
+  font-family: CircularStd-Medium;
+  src: url(../../fonts/Circular-Std-Font/Circular\ Std\ Medium.ttf);
+}
+
+@font-face {
+  font-family: CircularStd-Bold;
+  src: url(../../fonts/Circular-Std-Font/Circular\ Std\ Bold.ttf);
+}
+
+@font-face {
+  font-family: CircularStd-Book;
+  src: url(../../fonts/Circular-Std-Font//Circular\ Std\ Book.ttf);
+}
+
+@font-face {
+  font-family: AkkuratPro-Regular;
+  src: url(../../fonts/AkkuratPro/AkkuratPro-Regular.otf);
+}
+
+@font-face {
+  font-family: AkkuratPro-Bold;
+  src: url(../../fonts/AkkuratPro/AkkuratPro-Bold.otf);
+}
+
+@font-face {
+  font-family: Rubik-Bold;
+  src: url(../../fonts/Rubik/static/Rubik-Bold.ttf);
+}
+
+@font-face {
+  font-family: Rubik-Medium;
+  src: url(../../fonts/Rubik/static/Rubik-Medium.ttf);
+}
+
+@font-face {
+  font-family: NunitoSans-Regular;
+  src: url(../../fonts/Nunito_Sans/NunitoSans-Regular.ttf);
+}
+
+:root {
+  --blue-grey: #637696;
+  --blue-grey15: rgba(171, 181, 199, 0.15);
+  --blue-grey20: rgba(99, 118, 150, 0.2);
+  --blue-grey30: rgba(99, 118, 150, 0.3);
+  --squash: #e6b413;
+  --green-blue: #00b178;
+  --denim-blue-30: rgba(60, 90, 154, 0.3);
+  --scarlet: #d0021b;
+  --dark-lime-green: #86c306;
+  --cerulean: #009cde;
+  --nice-blue-7: rgba(23, 115, 166, 0.07);
+  --dark-grey-blue: #3a4e6f;
+  --dark-grey-blue25: rgba(58, 78, 111, 0.25);
+  --cerulean-30: rgba(0, 156, 222, 0.3);
+  --golden-yellow: #f8c41c;
+  --ice-blue: #f6fcff;
+  --cerulean10: rgba(0, 156, 222, 0.1);
+  --cerulean03: rgba(0, 156, 222, 0.03);
+  --black05: rgba(0, 0, 0, 0.05);
+  --dark-forest-green: #000808;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+/* --------------------------------------------------------------Positional Classes */
+.directionHorizontal {
+  flex-direction: row;
+}
+
+.directionVertical {
+  flex-direction: column;
+}
+/* ------------------------------------------------------------- Positional Classes */
+
+.fixed {
+  position: fixed;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+/* ----------------------------------------------- Theme Button CSS */
+
+.btnTheme {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Rubik-Bold, sans-serif;
+}
+
+.xcoinLargeBtn {
+  width: 330px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  color: white;
+  border: none;
+  font-size: 18px;
+  line-height: 1px;
+  font-weight: 1000;
+}
+
+.xcoinsmallBtn {
+  width: 200px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  font-size: 18px;
+  line-height: 1px;
+  font-weight: bold;
+}
+
+.xcoinContainer {
+  height: 100vh;
+  width: 1680px;
+  margin: 0 auto;
+}
+
+.gradientSame {
+  width: 100%;
+  background-image: linear-gradient(to bottom, var(--ice-blue), #ffffff 96%);
+}
+
+.headerArea {
+  width: 100%;
+  padding: 30px 0 20px 0;
+}
+.wrapperVerticalArea,
+.wrapperHorizontalArea {
+  width: 1222px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.wrapperVerticalArea {
+  flex-direction: column;
+}
+
+.wrapperHorizontalArea {
+  flex-direction: row;
+}
+
+.logoTextContainer {
+  height: 46px;
+  font-size: 30px;
+  line-height: 61px;
+  padding: 0 40px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--blue-grey15);
+}
+
+.linkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 140px 0 40px;
+}
+
+.linkContainer ul {
+  display: flex;
+  flex-direction: row;
+}
+
+.linkContainer ul li {
+  margin: 0 20px 0 20px;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-family: AkkuratPro-Bold;
+  color: var(--dark-grey-blue);
+}
+
+.linkContainer ul .activeLink {
+  color: var(--cerulean);
+}
+
+.accountContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectLanguage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 0;
+}
+
+.selectedOption {
+  width: 70px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.selectedOption img {
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+}
+
+.dropSymbol {
+  height: 7px;
+  width: 7px;
+  border: 2px solid;
+  border-color: transparent transparent black black;
+  transform: rotate(-45deg);
+  margin: 0 0 0 5px;
+}
+
+.listBox {
+  position: relative;
+}
+
+.listBox ul {
+  position: absolute;
+  background-color: white;
+  box-shadow: 5px 5px 5px var(--blue-grey20);
+}
+
+.listBox ul li {
+  width: 70px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.listBox ul li img {
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+}
+
+/* HeaderButton_CSS */
+
+.btnContainer {
+  margin: 0 10px 0 10px;
+}
+
+.btnContainer button {
+  width: 110px;
+  height: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 1px;
+  border-radius: 23px;
+  outline: none;
+  font-family: AkkuratPro-Bold;
+  color: var(--cerulean);
+  cursor: pointer;
+}
+
+.loginBtn {
+  background-color: transparent;
+  border: solid 2px var(--cerulean10);
+}
+
+.signupBtn {
+  border: none;
+  background-color: var(--cerulean10);
+}
+
+/* -------------------------------------------------------------------------------------------------Banner Area */
+
+.bannerContainer {
+  padding: 19px 0 125px 0;
+}
+
+.cryptoText {
+  margin: 0 50px 0 0;
+}
+
+.headLeft {
+  margin: 98px 0 39px 0;
+  font-size: 45px;
+  line-height: 53px;
+  font-family: Rubik-Bold, sans-serif;
+}
+
+.bodyLeft {
+  margin: 0 0 39px 0;
+  font-size: 35px;
+  line-height: 42px;
+  font-family: Rubik-Medium, sans-serif;
+}
+
+.footLeft {
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--blue-grey);
+  font-family: NunitoSans-Regular, sans-serif;
+}
+
+.cryptoCard {
+  width: 492px;
+  padding: 33px 40px 45px 40px;
+  box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
+  background-color: white;
+  border-radius: 15px;
+}
+
+.headRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  line-height: 40px;
+  font-family: CircularStd-Medium;
+}
+
+.bodyRight {
+  margin: 10px 10px 0 10px;
+  display: flex;
+}
+
+.bodyRight button {
+  width: 196px;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-color: var(--denim-blue-30);
+  border: 1.5px solid;
+}
+
+.bodyRight button:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.bodyRight button:last-child {
+  border-left: transparent;
+  border-radius: 0 10px 10px 0;
+}
+
+.buysellBtn {
+  color: var(--cerulean);
+  border-color: var(--cerulean);
+}
+
+.footRight {
+  display: flex;
+  flex-direction: column;
+  margin: 25px 0 0 10px;
+}
+
+.footRight .currencyBox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 20px 0;
+  margin: 0 0 20px 0;
+  border-bottom: 1px solid var(--dark-grey-blue25);
+}
+
+.footRight .currencyBox:nth-child(2) {
+  border-bottom: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.currencyBox img {
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+}
+
+.amountDiv {
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0 20px 0 0;
+  border-right: 1px solid var(--dark-grey-blue);
+  font-family: CircularStd-Book;
+}
+
+#amountdiv1 {
+  width: 220px;
+}
+
+#amountdiv2 {
+  width: 220px;
+}
+
+.currencyCountry {
+  font-size: 26px;
+  line-height: 36px;
+  font-size: CircularSrd-Regular;
+}
+
+.currencyCountry img {
+  margin: 0 0 0 10px;
+}
+
+/* ----------------------------------------------------------------------------------- payCard css */
+
+.payCardsContainer {
+  width: 100%;
+  padding: 19px 0 19px 0;
+}
+
+.payCardWrapper {
+  width: 100%;
+  height: 375px;
+  margin: 0 0 0 29px;
+}
+
+.payCardsContainer .masterCard {
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 331.6px;
+  height: 198.4px;
+  background-color: #fff6f6;
+  border-radius: 32.5px;
+  box-shadow: 0 3px 16px 0 var(--black05);
+  border: solid 1px var(--blue-grey20);
+  padding: 20.3px 31px 26.9px 29.6px;
+}
+
+.payCardsContainer .masterCard img {
+  margin: 0 0 26.2px 0;
+}
+
+.payCardsContainer .masterCard .dotContainer {
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 22px 0;
+}
+
+.payCardsContainer .masterCard .dotContainer .dots {
+  margin: 0 6px 0 0;
+  height: 6px;
+  width: 6px;
+  background-color: var(--blue-grey);
+  border-radius: 50%;
+}
+
+.payCardsContainer .masterCard .dotContainer .dots:nth-child(4n) {
+  margin: 0 34px 0 0;
+}
+
+.payCardsContainer .masterCard .dotContainer .last4digit {
+  font-size: 16px;
+  font-weight: 300;
+  width: 38px;
+  margin: 0 2px 0 0;
+}
+
+.payCardsContainer .masterCard .cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.payCardsContainer .masterCard .cardInfo .cardHolder,
+.payCardsContainer .masterCard .cardInfo .cardDetails {
+  text-align: right;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--blue-grey);
+  font-weight: 300;
+}
+
+.holderName,
+.expireDate {
+  font-weight: 600;
+}
+
+.payCardsContainer .visaCard {
+  z-index: 2;
+  left: 281.4px;
+  top: 20px;
+  width: 415.2px;
+  height: 248.4px;
+  background-color: #f6fcff;
+  border-radius: 32.5px;
+  box-shadow: 0 3px 16px 0 var(--black05);
+  border: solid 1px var(--blue-grey20);
+  padding: 25.6px 40.1px 34.5px 36.3px;
+}
+
+.payCardsContainer .visaCard img {
+  margin: 0 0 56.1px 0;
+}
+
+.payCardsContainer .visaCard .dotContainer {
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 29.1px 0;
+}
+
+.payCardsContainer .visaCard .dotContainer .dots {
+  margin: 0 7.5px 0 0;
+  height: 7.5px;
+  width: 7.5px;
+  background-color: var(--blue-grey);
+  border-radius: 50%;
+}
+
+.payCardsContainer .visaCard .dotContainer .dots:nth-child(4n) {
+  margin: 0 42.6px 0 0;
+}
+
+.payCardsContainer .visaCard .dotContainer .last4digit {
+  font-size: 19px;
+  font-weight: 600;
+  width: 46px;
+  margin: 0 2.7px 0 0;
+}
+
+.payCardsContainer .visaCard .cardInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payCardsContainer .visaCard .cardInfo .cardHolder,
+.payCardsContainer .visaCard .cardInfo .cardDetails {
+  text-align: right;
+  font-size: 17px;
+  line-height: 23px;
+  color: var(--blue-grey);
+  font-weight: 300;
+}
+
+.payCardsContainer .exchangeCard {
+  z-index: 3;
+  right: 46.8px;
+  top: 40px;
+  width: 499.6px;
+  height: 298.4px;
+  background-color: #ffffff;
+  border-radius: 32.5px;
+  box-shadow: 0 3px 16px 0 var(--black05);
+  border: solid 1px var(--blue-grey20);
+  padding: 60px 49px 59.4px 41.6px;
+}
+
+.payCardsContainer .exchangeCard .exchangeTitle {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: bold;
+  color: var(--dark-forest-green);
+  margin: 0 0 10px 0;
+}
+
+.payCardsContainer .exchangeCard .exchangeDes {
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--blue-grey);
+}
+
+/* ------------------------------------------------------------------------------------------ Buy & Sell DogeCoin css*/
+
+.buysellDogeCoin {
+  width: 100%;
+  background-image: url("./assets/images/background.svg");
+  overflow-y: hidden;
+}
+
+.buysellDogeContainer {
+  width: 100%;
+  margin: 48.6px 0 108px 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.buysellHeight {
+  height: 1350px;
+}
+
+.buysellDogeContainer:last-child {
+  top: 700px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: 0 0 98px 0;
+}
+
+.buyHead {
+  width: 100%;
+  margin: 0 0 19px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  line-height: 50px;
+  color: var(--dark-forest-green);
+  font-family: Rubik-Bold, sans-serif;
+}
+
+.buySubHead {
+  width: 100%;
+  margin: 0 0 47.8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  color: var(--dark-forest-green);
+  font-family: Rubik-Medium, sans-serif;
+}
+
+.buyFlow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: space-between;
+  margin: 0 0 36px 0;
+}
+
+.verifyStep,
+.buyStep,
+.receiveStep {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.verifyStep img {
+  margin: 34.2px 0 22px 0;
+}
+
+.imgHead {
+  display: flex;
+  margin: 0 0 22px 0;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.number {
+  width: 55px;
+  height: 55px;
+  margin: 0 24px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+
+.numberText {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--dark-forest-green);
+  font-family: Rubik-Medium;
+}
+
+.stepDes {
+  text-align: center;
+  color: var(--blue-grey);
+  line-height: 36px;
+  font-family: NunitoSans-Regular;
+}
+
+.buyStep img {
+  margin: 0 0 20.9px 0;
+}
+
+.buyStep img:first-child {
+  margin: 0 0 9.7px 0;
+}
+
+.receiveStep .timerImg {
+  margin: 27.2px 0 23px 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.receiveStep .timerImg img {
+  margin: 0 10px 0 0;
+}
+
+.receiveStep .timerImg .timerText {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+}
+
+.timerTime {
+  font-size: 28px;
+  letter-spacing: 4.2;
+  font-weight: bold;
+}
+
+.receiveStep .timerImg .timerText .minTag {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.minText {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.receiveStep .timerImg .timerText .minTag img {
+  margin: 0 0 0 2px;
+  fill: var(--cerulean);
+}
+
+.bitcoin {
+  left: -500px;
+  top: 25%;
+  background: transparent;
+  transform: rotate(15deg);
+}
+
+.bitcoin img {
+  width: 500px;
+  height: 678.8px;
+  /* background-color: rgba(0, 156, 222, 0.03); */
+}
+
+/* -------------------------------------------------------------------------------------------- why Buy & Sell Dogecoin with Xcoin? */
+
+.questionContainer {
+  width: 1400px;
+  margin: 0 0 127px 0;
+  display: flex;
+}
+
+.questionContainer .mobilePerson {
+  width: 720px;
+  height: 580px;
+}
+
+.questionDes {
+  margin: 0 0 0 80px;
+}
+
+.questionHead {
+  width: 493px;
+  font-size: 40px;
+  line-height: 50px;
+  color: var(--dark-forest-green);
+  font-weight: bold;
+  margin: 0 0 36px 0;
+  font-family: Rubik-Bold;
+}
+
+.questionBody {
+  display: flex;
+}
+
+.questionPoints {
+  display: flex;
+  margin: 0 0 30px 0;
+}
+
+.questionPoints:last-child {
+  display: flex;
+  margin: 0 0 17px 0;
+}
+
+.pointTitle {
+  display: flex;
+  font-size: 20px;
+  line-height: 50px;
+  font-family: Rubik-Medium;
+}
+
+.pointTitleText {
+  margin: 0 0 0 12px;
+  color: var(--dark-forest-green);
+}
+
+.pointContent {
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--blue-grey);
+  font-family: NunitoSans-Regular;
+}
+
+.questionFoot {
+  display: flex;
+  padding: 28px 35px 27px 36px;
+  box-shadow: 0 3px 26px 0 rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  border-radius: 30px;
+}
+
+.questionfootText {
+  width: 306px;
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--dark-forest-green);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-family: Rubik-Bold;
+}
+
+.questionfootBtn {
+  width: 200px;
+  height: 65px;
+  border-radius: 50px;
+  margin: 0 0 0 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cerulean);
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1px;
+  font-weight: bolder;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------------------------------- About Dogecoin CSS */
+
+.aboutDogecoinContainer {
+  width: 100%;
+  padding: 0 0 100px 0;
+}
+
+.sideCard {
+  width: 281px;
+  box-shadow: 0 3px 21px 0 rgba(0, 0, 0, 0.04);
+  border: solid 1px rgba(99, 118, 150, 0.2);
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.paddingSideCardOne {
+  padding: 79px 65px 73px 51px;
+}
+
+.paddingSideCardTwo {
+  padding: 116.5px 56px 73px 55px;
+}
+
+.decentralizedImage {
+  width: 94.6px;
+  height: 100.1px;
+  margin: 0 28.6px 28.9px 41.8px;
+}
+
+.peerTopeerImage {
+  width: 139.5px;
+  height: 52.6px;
+  margin: 0 15.6px 38.9px 14.9px;
+}
+
+.checkMark {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkMark img {
+  margin: 0 9px 0 0;
+}
+
+.checkMarkText {
+  font-size: 18px;
+  width: 127px;
+  font-family: Rubik-Medium, sans-serif;
+  color: var(--dark-forest-green);
+  font-weight: bold;
+}
+
+.dogecoinDescription {
+  width: 600px;
+  margin: 0px 30px 0px 31px;
+  padding: 32px 17px 27px 18px;
+  box-shadow: 0 3px 21px 0 rgba(0, 0, 0, 0.04);
+  border: solid 1px rgba(99, 118, 150, 0.2);
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.dogecoinDesHead {
+  font-size: 40px;
+  line-height: 50px;
+  margin-bottom: 24px;
+  font-family: Rubik-Bold;
+  line-height: 47px;
+  color: var(--dark-forest-green);
+}
+
+.dogecoinDesText {
+  width: 565px;
+  font-size: 20px;
+  line-height: 36px;
+  color: var(--blue-grey);
+  font-family: NunitoSans-Regular;
+}
+
+/* -------------------------------------------------------- Spend Dogecoin CSS */
+
+.spendDogecoinContainer {
+  width: 100%;
+  margin-bottom: 150px;
+}
+
+.spendDogecoinHeader {
+  padding: 0 288px 0 269px;
+  font-size: 40px;
+  line-height: 50px;
+  margin: 0 0 20px 0;
+  font-family: Rubik-Bold;
+  color: var(--dark-forest-green);
+}
+
+.spendDogecoinText {
+  text-align: center;
+  margin: 0 200px 67px 168.5px;
+  font-size: 20px;
+  line-height: 36px;
+  font-family: NunitoSans-Regular, sans-serif;
+  color: var(--blue-grey);
+}
+
+.spendDogecoinImages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frameImage {
+  width: 283px;
+  height: 298px;
+}
+
+.domainHosting {
+  height: auto;
+  width: auto;
+  margin: 0 40px;
+}
+
+.frameImage .clothingStore {
+  left: 0;
+  bottom: 0;
+}
+
+.frameBorder {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 0.5px solid;
+  border-color: var(--blue-grey30);
+  top: 16px;
+  left: 15px;
+  background-color: transparent;
+}
+
+.clothingStore {
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 4px;
+  font-family: Rubik-Medium;
+  color: var(--dark-forest-green);
+}
+
+/* ------------------------------------------------------------------ Footer Section CSS */
+
+.footerSection {
+  width: 100%;
+}
+.footerSection > .hl {
+  height: 0;
+  margin: 0px 210.5px 0 189.5px;
+  border: solid 1px rgba(99, 118, 150, 0.2);
+}
+
+.footerSection  .row1 {
+  display: flex;
+  justify-content: space-between;
+}
+.footerSection .row1 > div {
+  display: flex;
+  flex-direction: column;
+}
+ul li {
+  list-style-type: none;
+}
+#footerLogo {
+  height: 35px;
+  width: 130px;
+  margin: 0 0 25px 0;
+}
+#reviewImg {
+  margin: 0 0 11px 0;
+  width: 256px;
+  height: 56px;
+}
+.footerSection .row1 .addressSection p {
+  width: 300px;
+  height: 22px;
+  margin: 0px 287px 127px 0;
+  opacity: 0.5;
+  font-family: AkkuratPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: var(--blue-grey);
+}
+.footerSection .row2 ul li {
+  display: inline-block;
+  margin: 0 30px 0 0;
+  font-family: AkkuratPro;
+  font-size: 14px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.57;
+  letter-spacing: normal;
+  color: var(--blue-grey);
+}
+.footerSection .row3 {
+  height: 44px;
+  margin: 58px 0px 0 0;
+  opacity: 0.5;
+  font-family: AkkuratPro;
+  font-size: 13px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: var(--blue-grey);
+}
+.footerSection .row1 h2 {
+  margin: 0 206px 16px 0;
+  font-family: AkkuratPro;
+  font-size: 14px;
+  font-weight: bolder;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.71;
+  letter-spacing: 1px;
+  color: #000000;
+}
+.footerSection .row1 ul li a {
+  font-family: AkkuratPro;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2.13;
+  letter-spacing: normal;
+  color: var(--blue-grey);
+  text-decoration: none;
+}
+.socialLinks .socialIcons {
+  margin: 0 10px 0 0;
+}

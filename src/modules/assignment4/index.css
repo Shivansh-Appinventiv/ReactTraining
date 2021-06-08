@@ -1,0 +1,375 @@
+@font-face {
+  font-family: CircularStd-Medium;
+  src: url(../../fonts/Circular-Std-Font/Circular\ Std\ Medium.ttf);
+}
+
+@font-face {
+  font-family: CircularStd-Bold;
+  src: url(../../fonts/Circular-Std-Font/Circular\ Std\ Bold.ttf);
+}
+
+@font-face {
+  font-family: CircularStd-Book;
+  src: url(../../fonts/Circular-Std-Font//Circular\ Std\ Book.ttf);
+}
+
+@font-face {
+  font-family: AkkuratPro-Regular;
+  src: url(../../fonts/AkkuratPro/AkkuratPro-Regular.otf);
+}
+
+@font-face {
+  font-family: AkkuratPro-Bold;
+  src: url(../../fonts/AkkuratPro/AkkuratPro-Bold.otf);
+}
+
+@font-face {
+  font-family: Rubik-Bold;
+  src: url(../../fonts/Rubik/static/Rubik-Bold.ttf);
+}
+
+.supportSection {
+  width: 100%;
+  padding: 18px 25px 18px 25px;
+  background-color: #f9fdff;
+}
+
+.supportHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.supportHeaderLeft,
+.supportHeaderRight {
+  display: flex;
+  align-items: center;
+}
+
+.supportHeaderLeft {
+  width: 68%;
+}
+.supportHeaderRight {
+  width: 32%;
+  justify-content: space-around;
+}
+
+.collapseIcon,
+.closeIcon {
+  display: none;
+}
+
+.lines {
+  height: 2px;
+  width: 14px;
+  margin-bottom: 3px;
+  border-radius: 1px;
+  background-color: #009cde;
+}
+
+.lines:last-child {
+  margin-bottom: 0;
+}
+
+.logoWrapper img {
+  height: 30px;
+  width: 100px;
+}
+
+.settingsWrapper img {
+  height: 22px;
+  width: 22px;
+}
+
+.notificationWrapper img {
+  height: 25px;
+  width: 25px;
+}
+
+.avatarWrapper img {
+  height: 34px;
+  width: 34px;
+}
+
+.titleHeading {
+  font-size: 24px;
+  line-height: 30px;
+  color: black;
+  font-family: CircularStd-Bold, sans-serif;
+}
+
+.navWrapper {
+  min-width: 20%;
+  background-color: #f9fdff;
+  padding: 20px 0 0 20px;
+}
+
+.navHeader {
+  display: none;
+}
+
+.navlinks {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.navlinkTitle {
+  color: grey;
+  margin-bottom: 10px;
+}
+
+.navlinks ul {
+  list-style: none;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navlinks ul li {
+  margin: 10px 0;
+  color: #009cde;
+  cursor: pointer;
+}
+
+.navAndContent {
+  display: flex;
+}
+
+.supportContentBox {
+  min-width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBox {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  box-shadow: 0 7px 15px 0 rgba(23, 115, 166, 0.07);
+  height: 50px;
+  align-items: center;
+  border-radius: 25px;
+}
+
+.searchImageBox,
+.inputBox,
+.downArrow {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchImageBox {
+  width: 5%;
+}
+
+.inputBox {
+  width: 90%;
+}
+
+.searchImageBox img {
+  height: 20px;
+  width: 20px;
+}
+
+.inputBox input {
+  width: 100%;
+  height: 100%;
+  border: transparent;
+  outline: transparent;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.downArrow {
+  width: 5%;
+  margin: 0 0 0 2px;
+}
+
+.cardBox {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardBoxGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  margin-top: 30px;
+}
+
+.cardGrid {
+  min-height: 353px;
+  padding: 28px 41px 36px 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 7px 15px 0 rgba(23, 115, 166, 0.07);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card {
+  width: 32%;
+  min-height: 353px;
+  padding: 28px 41px 36px 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 7px 15px 0 rgba(23, 115, 166, 0.07);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:last-child {
+  margin-bottom: 30px;
+}
+
+.cardUp {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.cardUp .subtitleHeading {
+  width: 100%;
+  font-size: 18px;
+  line-height: 36px;
+  font-family: CircularStd-Bold;
+  margin: 0 0 21px 0;
+}
+
+.listArea {
+  width: 100%;
+}
+
+.listArea ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.listArea ul li {
+  width: 100%;
+  color: #009cde;
+  margin: 10px 0px 0 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.seeAll {
+  color: #86c306;
+}
+
+@media screen and (max-width: 958px) {
+  .supportSection {
+    position: relative;
+  }
+
+  .collapseIcon,
+  .closeIcon {
+    width: 34px;
+    height: 34px;
+    box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+  }
+
+  .navWrapper:not(.hide) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    box-shadow: 0 3px 21px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .navHeader {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .navHeader img {
+    margin-right: 20px;
+  }
+
+  .closeIcon {
+    color: #009cde;
+    font-size: 20px;
+  }
+
+  .supportContentBox {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardBoxGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media screen and (max-width: 598px) {
+  .collapseIcon,
+  .closeIcon {
+    width: 34px;
+    height: 34px;
+    box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 25px;
+  }
+
+  .searchImageBox {
+    width: 10%;
+  }
+
+  .inputBox {
+    width: 80%;
+  }
+
+  .downArrow{
+    width: 10%;
+    margin: 0 0 0 2px;
+  }
+
+  .cardBoxGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
