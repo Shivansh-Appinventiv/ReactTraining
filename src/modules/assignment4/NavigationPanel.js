@@ -1,9 +1,7 @@
 import { logoImage } from "./Images";
 
 const NavigationPanel = (props) => {
-  console.log(props);
   const changeClass = () => {
-    console.log("inside Nav");
     props.handleNav("hide");
   };
   return (

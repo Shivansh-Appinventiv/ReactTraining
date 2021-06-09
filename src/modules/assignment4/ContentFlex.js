@@ -90,7 +90,7 @@ const listCard = [
 const Card = () => {
   const cards = listCard.map((item, index) => {
     return (
-      <div key={index} className={`card`}>
+      <div key={index} className={`cardFlex`}>
         <div className={`cardUp`}>
           <div className={`subtitleHeading`}>{item.subtitleHeading}</div>
           <div className={`listArea`}>
@@ -127,7 +127,7 @@ const ContentFlex = () => {
         </div>
         <div className={`downArrow`}>&#9660;</div>
       </div>
-      <div className={`cardBox`}>
+      <div className={`cardBoxFlex`}>
         <Card />
       </div>
     </div>

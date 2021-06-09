@@ -30,6 +30,7 @@
 
 .supportSection {
   width: 100%;
+  position: relative;
   padding: 18px 25px 18px 25px;
   background-color: #f9fdff;
 }
@@ -57,7 +58,16 @@
 
 .collapseIcon,
 .closeIcon {
-  display: none;
+  width: 34px;
+  height: 34px;
+  box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 25px;
 }
 
 .lines {
@@ -99,14 +109,33 @@
   font-family: CircularStd-Bold, sans-serif;
 }
 
-.navWrapper {
-  min-width: 20%;
-  background-color: #f9fdff;
+.navWrapper:not(.hide) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: 0 3px 21px 0 rgba(0, 0, 0, 0.5);
+  background-color: white;
   padding: 20px 0 0 20px;
 }
 
-.navHeader {
+.hide {
   display: none;
+}
+
+.navHeader {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.navHeader img {
+  margin-right: 20px;
+}
+
+.closeIcon {
+  color: #009cde;
+  font-size: 20px;
 }
 
 .navlinks {
@@ -140,7 +169,7 @@
 }
 
 .supportContentBox {
-  min-width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -166,11 +195,16 @@
 }
 
 .searchImageBox {
-  width: 5%;
+  width: 10%;
 }
 
 .inputBox {
-  width: 90%;
+  width: 80%;
+}
+
+.downArrow {
+  width: 10%;
+  margin: 0 0 0 2px;
 }
 
 .searchImageBox img {
@@ -187,21 +221,29 @@
   line-height: 32px;
 }
 
-.downArrow {
-  width: 5%;
-  margin: 0 0 0 2px;
-}
-
-.cardBox {
+.cardBoxFlex {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+.cardFlex {
+  width: 100%;
+  min-height: 353px;
+  padding: 28px 41px 36px 40px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 7px 15px 0 rgba(23, 115, 166, 0.07);
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .cardBoxGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   grid-gap: 30px;
   margin-top: 30px;
 }
@@ -217,20 +259,7 @@
   justify-content: space-between;
 }
 
-.card {
-  width: 32%;
-  min-height: 353px;
-  padding: 28px 41px 36px 40px;
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 7px 15px 0 rgba(23, 115, 166, 0.07);
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card:last-child {
+.cardFlex:last-child {
   margin-bottom: 30px;
 }
 
@@ -276,100 +305,59 @@
   color: #86c306;
 }
 
-@media screen and (max-width: 958px) {
+@media screen and (min-width: 598px) {
   .supportSection {
-    position: relative;
+    position: static;
   }
 
-  .collapseIcon,
-  .closeIcon {
-    width: 34px;
-    height: 34px;
-    box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
-    background-color: #ffffff;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 25px;
+  .searchImageBox {
+    width: 5%;
   }
 
-  .navWrapper:not(.hide) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1;
-    box-shadow: 0 3px 21px 0 rgba(0, 0, 0, 0.5);
+  .inputBox {
+    width: 90%;
   }
 
-  .hide {
-    display: none;
+  .downArrow {
+    width: 5%;
+    margin: 0 0 0 2px;
   }
-
-  .navHeader {
-    display: flex;
-    margin-bottom: 20px;
-  }
-
-  .navHeader img {
-    margin-right: 20px;
-  }
-
-  .closeIcon {
-    color: #009cde;
-    font-size: 20px;
-  }
-
-  .supportContentBox {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
   .cardBoxGrid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .card {
+  .cardFlex {
     width: calc(50% - 20px);
   }
 }
 
-@media screen and (max-width: 598px) {
+@media screen and (min-width: 958px) {
   .collapseIcon,
   .closeIcon {
-    width: 34px;
-    height: 34px;
-    box-shadow: 0 10px 20px 0 rgba(37, 119, 167, 0.07);
-    background-color: #ffffff;
-    border-radius: 50%;
+    display: none;
+  }
+
+  .navWrapper {
+    display: block;
+    min-width: 20%;
+    background-color: #f9fdff;
+  }
+
+  .navHeader {
+    display: none;
+  }
+
+  .supportContentBox {
+    min-width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 25px;
-  }
-
-  .searchImageBox {
-    width: 10%;
-  }
-
-  .inputBox {
-    width: 80%;
-  }
-
-  .downArrow{
-    width: 10%;
-    margin: 0 0 0 2px;
   }
 
   .cardBoxGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1fr);
   }
 
-  .card {
-    width: 100%;
+  .cardFlex {
+    width: 32%;
   }
 }
