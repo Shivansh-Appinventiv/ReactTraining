@@ -13,6 +13,7 @@ import { currency } from "./currency";
 import clsx from "clsx";
 import Paragraph from "./Paragraph";
 import Footer from "./Footer";
+import TableMaterial from "./TableMaterial";
 //#1565c0
 
 const useStyle = makeStyles({
@@ -87,7 +88,7 @@ const useStyle = makeStyles({
   backgroundWhite: {
     backgroundColor: "white",
     border: "1px solid lightgrey",
-    boxShadow: "none"
+    boxShadow: "none",
   },
 });
 
@@ -120,6 +121,7 @@ const MainContent = () => {
               className={classes.assignWidth}
             ></TextField>
             <Autocomplete
+              value={"INR"}
               options={currency}
               className={classes.assignWidth}
               getOptionLabel={(option) => option.cc}
@@ -171,6 +173,7 @@ Anywhere.`}
             </Button>
           </Box>
         </Box>
+        <TableMaterial />
         <Paragraph />
         <Footer />
       </Box>

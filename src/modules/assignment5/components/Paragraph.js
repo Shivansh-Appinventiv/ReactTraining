@@ -91,7 +91,7 @@ const Paragraph = () => {
   const classes = useStyles();
 
   return (
-    <div className={"paragraphSection"}>
+    <div>
       <div className={classes.postAd}>
         <Typography variant={"h6"}>{"You can be the first one to"}</Typography>
         &nbsp;&nbsp;
@@ -161,7 +161,7 @@ const Paragraph = () => {
         }
       </Typography>
       <Divider className={classes.horizontalRule} variant={"fullWidth"} />
-    </div>
+      </div>
   );
 };
 
