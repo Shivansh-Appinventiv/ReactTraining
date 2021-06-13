@@ -92,7 +92,7 @@ const useStyles = makeStyles({
       color: "white",
     },
     "&.MuiButton-contained:hover": {
-      backgroundColor: "rgba(0,0,0,0.4)",
+      backgroundColor: "rgb(178, 130, 21)",
     },
   },
   colTitle: {
@@ -100,7 +100,7 @@ const useStyles = makeStyles({
   },
   hoverEffect: {
     "&:hover": {
-      backgroundColor: "lightgrey",
+      backgroundColor: "#f4f6f8",
     },
   },
 });
@@ -123,6 +123,7 @@ const TableMaterial = () => {
                   return (
                     <TableCell
                       align={`right`}
+                      padding={`none`}
                       className={clsx(classes.colTitle)}
                     >
                       <Typography>{value}</Typography>
@@ -130,7 +131,7 @@ const TableMaterial = () => {
                   );
                 }
                 return (
-                  <TableCell>
+                  <TableCell padding={`none`}>
                     <Typography>{value}</Typography>
                   </TableCell>
                 );
@@ -140,7 +141,7 @@ const TableMaterial = () => {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.seller} className={clsx(classes.hoverEffect)}>
-                <TableCell component="th" scope="row">
+                <TableCell padding={`none`} component="th" scope="row">
                   <Link href="#" className={clsx(classes.tableLink)}>
                     <Box className={clsx(classes.sellerCell)}>
                       <Typography>{row.seller}</Typography>
@@ -148,7 +149,7 @@ const TableMaterial = () => {
                     </Box>
                   </Link>
                 </TableCell>
-                <TableCell>
+                <TableCell padding={`none`}>
                   <Box className={clsx(classes.paymentCell)}>
                     <Box className={clsx(classes.flagCell)}>
                       <img
@@ -172,15 +173,15 @@ const TableMaterial = () => {
                     </Box>
                   </Box>
                 </TableCell>
-                <TableCell>
+                <TableCell padding={`none`}>
                   <Typography className={clsx(classes.priceCell)}>
                     {row.price}
                   </Typography>
                 </TableCell>
-                <TableCell align={`right`}>
+                <TableCell padding={`none`} align={`right`}>
                   <Typography>{row.limit}</Typography>
                 </TableCell>
-                <TableCell align={`right`}>
+                <TableCell padding={`none`} align={`right`}>
                   <Button
                     color={`default`}
                     variant={`contained`}

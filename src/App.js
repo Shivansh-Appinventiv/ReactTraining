@@ -3,9 +3,9 @@ import React from "react";
 //import Home from "./modules/home";
 //import Assignment from "./modules/assignment1";
 //import Assignment2 from "./modules/assignment2";
-import Assignment5 from "./modules/assignment5";
+//import Assignment5 from "./modules/assignment5";
 //import Assignment3 from "./modules/assignment3";
-
+import MovieTemplate from "./modules/MovieTemplate";
 class App extends React.Component {
   render() {
     return (
@@ -14,8 +14,9 @@ class App extends React.Component {
         <Assignment/> 
         <Assignment2/>
         <Assignment3/>
-        <Assignment4/> */}
-        <Assignment5 />
+        <Assignment4/>
+        <Assignment5 /> */}
+        <MovieTemplate />
       </div>
     );
   }
