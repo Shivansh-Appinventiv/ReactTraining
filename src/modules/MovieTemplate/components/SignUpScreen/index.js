@@ -24,7 +24,7 @@ const SignUpScreen = (props) => {
   };
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     if (e.target.name.localeCompare("username") === 0) {
       obj.username = e.target.value;
     } else if (e.target.name.localeCompare("email") === 0) {

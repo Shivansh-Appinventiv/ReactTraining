@@ -23,19 +23,17 @@ const MovieHomeScreen = () => {
   console.log("Movie Home Screen");
   const [movieData, setMovieData] = useState(movies);
 
-  let oldMovieData = movieData;
-  oldMovieData[
-    oldMovieData.findIndex((obj) => obj.id.localeCompare("4") === 0)
-  ].rating = Math.floor(Math.random() * 5 + 1).toString();
-  oldMovieData[
-    oldMovieData.findIndex((obj) => obj.id.localeCompare("5") === 0)
-  ].rating = Math.floor(Math.random() * 5 + 1).toString();
+  setTimeout(() => {
+     let oldMovieData = movieData;
+     oldMovieData[
+       oldMovieData.findIndex((obj) => obj.id.localeCompare("4") === 0)
+     ].rating = Math.floor(Math.random() * 5 + 1).toString();
+     oldMovieData[
+       oldMovieData.findIndex((obj) => obj.id.localeCompare("5") === 0)
+     ].rating = Math.floor(Math.random() * 5 + 1).toString();
 
-  clearTimeout(
-    setTimeout(() => {
-      setMovieData([...oldMovieData]);
-    }, 5000)
-  );
+    setMovieData([...oldMovieData]);
+  }, 5000);
 
   return (
     <div className={`movieHomeContainer`}>
