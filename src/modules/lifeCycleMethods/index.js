@@ -19,6 +19,7 @@ import {
   Typography,
   makeStyles,
 } from "@material-ui/core";
+import Loader from "./components/Loader";
 
 const useStyles = makeStyles((theme) => ({
   searchBar: {
@@ -52,6 +53,7 @@ export default function LifeCycleMethods() {
   const [openPopup, setOpenPopup] = useState(false);
   const [edit, setEdit] = useState(null);
   const [index, setIndex] = useState(null);
+  const [loader, setLoader] = useState(false);
 
   const {
     TableWrapper,
@@ -61,31 +63,38 @@ export default function LifeCycleMethods() {
   } = useTable(records, headCells, filterFunc);
 
   const handleSearch = (event) => {
-    let target = event.target;
-    setFilterFunc({
-      fn: (items) => {
-        if (target.value === "") {
-          return items;
-        } else {
-          let fullNameField = items.filter((x) =>
-            x.fullName.toLowerCase().includes(target.value)
-          );
-          let emailField = items.filter((x) =>
-            x.email.toLowerCase().includes(target.value)
-          );
+    setTimeout(() => {
+      let target = event.target;
+      setFilterFunc({
+        fn: (items) => {
+          if (target.value === "") {
+            return items;
+          } else {
+            let fullNameField = items.filter((x) =>
+              x.fullName.toLowerCase().includes(target.value)
+            );
+            let emailField = items.filter((x) =>
+              x.email.toLowerCase().includes(target.value)
+            );
 
-          return fullNameField || emailField;
-        }
-      },
-    });
+            return fullNameField || emailField;
+          }
+        },
+      });
+      setLoader(false);
+    }, 2000);
+    setLoader(true);
   };
 
-
-  const onDeleteItem = token =>{
-    let arr = records;
-    arr.splice(token,1);
-    setRecords([...arr]);
-  }
+  const onDeleteItem = (token) => {
+    setTimeout(() => {
+      let arr = records;
+      arr.splice(token, 1);
+      setRecords([...arr]);
+      setLoader(false);
+    }, 1000);
+    setLoader(true);
+  };
 
   const openEdit = (item) => {
     setEdit(item);
@@ -93,14 +102,19 @@ export default function LifeCycleMethods() {
   };
 
   const addOrEdit = (students) => {
-    console.log(index);
-    if (edit !== null) {
-      let arr = records;
-      arr[index] = students;
-      setRecords(arr);
-    } else {
-      setRecords([...records, students]);
-    }
+    setTimeout(() => {
+      //console.log(index);
+      if (edit !== null) {
+        let arr = records;
+        arr[index] = students;
+        setRecords(arr);
+      } else {
+        setRecords([...records, students]);
+      }
+      setLoader(false);
+      console.log(loader);
+    }, 2000);
+    setLoader(true);
     setOpenPopup(false);
   };
 
@@ -137,51 +151,65 @@ export default function LifeCycleMethods() {
             <Button
               variant={`contained`}
               color={`primary`}
-              onClick={() => {setOpenPopup(true)
-              setEdit(null)}}
+              onClick={() => {
+                setOpenPopup(true);
+                setEdit(null);
+              }}
             >{`Add Item`}</Button>
           </Toolbar>
-          <TableWrapper>
-            <TableHeader />
-            <TableBody>
-              {recordsAfterPagingAndSorting().map((item, index) => (
-                <TableRow key={index}>
-                  <TableCell>{item.fullName}</TableCell>
-                  <TableCell>{item.fatherName}</TableCell>
-                  <TableCell>{item.motherName}</TableCell>
-                  <TableCell>{item.email}</TableCell>
-                  <TableCell>{item.phoneNo}</TableCell>
-                  <TableCell>
-                    <div className={`actionContainer`}>
-                      <Button
-                        variant={`outlined`}
-                        color={`primary`}
-                        startIcon={<EditIcon />}
-                        onClick={() => {
-                          openEdit(item);
-                          setIndex(index);
-                        }}
-                      ></Button>
-                      <Button
-                        variant={`outlined`}
-                        color={`primary`}
-                        startIcon={<DeleteIcon />}
-                        onClick={()=> onDeleteItem(index)}
-                      ></Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-            <TablePaging />
-          </TableWrapper>
+          {loader ? (
+            <>
+              <Loader />
+            </>
+          ) : (
+            <>
+              <TableWrapper>
+                <TableHeader />
+                <TableBody>
+                  {recordsAfterPagingAndSorting().map((item, index) => (
+                    <TableRow key={index}>
+                      <TableCell>{item.fullName}</TableCell>
+                      <TableCell>{item.fatherName}</TableCell>
+                      <TableCell>{item.motherName}</TableCell>
+                      <TableCell>{item.email}</TableCell>
+                      <TableCell>{item.phoneNo}</TableCell>
+                      <TableCell>
+                        <div className={`actionContainer`}>
+                          <Button
+                            variant={`outlined`}
+                            color={`primary`}
+                            startIcon={<EditIcon />}
+                            onClick={() => {
+                              openEdit(item);
+                              setIndex(index);
+                            }}
+                          ></Button>
+                          <Button
+                            variant={`outlined`}
+                            color={`primary`}
+                            startIcon={<DeleteIcon />}
+                            onClick={() => onDeleteItem(index)}
+                          ></Button>
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+                <TablePaging />
+              </TableWrapper>
+            </>
+          )}
         </Paper>
         <PopUp
           title={edit ? `Edit Student` : `Add Student`}
           openPopup={openPopup}
           setOpenPopup={setOpenPopup}
         >
-          <StudentForm edit={edit} addOrEdit={addOrEdit} />
+          <StudentForm
+            edit={edit}
+            addOrEdit={addOrEdit}
+            setOpenPopup={setOpenPopup}
+          />
         </PopUp>
       </div>
     </div>

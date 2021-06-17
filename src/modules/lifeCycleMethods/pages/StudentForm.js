@@ -119,6 +119,7 @@ export default function StudentForm(props) {
             variant={`contained`}
             color={`secondary`}
             className={classes.buttonSpecs}
+            onClick={() => props.setOpenPopup(false)}
           >{`Cancel`}</Button>
         </div>
       </Form>
