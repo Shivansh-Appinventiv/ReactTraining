@@ -15,7 +15,7 @@ const EditForm = (props) => {
   let price = "";
   let id = "";
 
-  const handleChange = (e, index, value) => {
+  const handleChange = (e, index) => {
     if (e.target.name === "Name") {
       name = e.target.value;
     }
