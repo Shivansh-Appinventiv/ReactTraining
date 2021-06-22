@@ -8,7 +8,8 @@ import "./App.css";
 //import Assignment5 from "./modules/assignment5";
 //import MovieTemplate from "./modules/MovieTemplate";
 //import LogicalAbility from "./modules/Logical_Ability";
-import LifeCycleMethods from "./modules/lifeCycleMethods";
+//import LifeCycleMethods from "./modules/lifeCycleMethods";
+import ReactRouting from "./modules/ReactRouting";
 class App extends React.Component {
   render() {
     return (
@@ -20,8 +21,9 @@ class App extends React.Component {
         <Assignment4/>
         <Assignment5 />
         <MovieTemplate />
-        <LogicalAbility /> */}
-        <LifeCycleMethods />
+        <LogicalAbility />
+        <LifeCycleMethods /> */}
+        <ReactRouting />
       </div>
     );
   }
