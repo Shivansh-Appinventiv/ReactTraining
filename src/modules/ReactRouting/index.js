@@ -1,30 +1,30 @@
 import { Box, Button, Toolbar } from "@material-ui/core";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import {
   BrowserRouter as Router,
-  Redirect,
   Route,
   Switch,
   Link,
+  NavLink,
 } from "react-router-dom";
 import DashBoard from "./pages/DashBoard";
 import ProductDetail from "./pages/ProductDetail";
 import Modal from "./components/Modal";
 import LoginForm from "./pages/LoginForm";
+import UserDashboard from "./pages/UserDashboard";
+import Home from "./pages/Home";
+import UserDetail from "./pages/UserDetail";
 import "./index.css";
 
 export default function ReactRouting() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogIn, setIsLogIn] = useState(true);
+  const [isLogIn, setIsLogIn] = useState(
+    true && !window.localStorage.getItem("accessToken")
+  );
 
   return (
     <div className={`screenArea`}>
       <Router>
-        {!window.localStorage.getItem("accessToken") ? (
-          console.log("accessToken")
-        ) : (
-          <Redirect to="/dashboard" />
-        )}
         <Box className={`headerWrapper`}>
           <Toolbar>
             <Box className={`sectionContainer`}>
@@ -38,6 +38,20 @@ export default function ReactRouting() {
                   />
                   <span>{`AppInventivMall`}</span>
                 </Box>
+                {isLogIn && !window.localStorage.getItem("accessToken") ? (
+                  <></>
+                ) : (
+                  <Box>
+                    <NavLink
+                      to={`/dashboard`}
+                      className={`navLinks`}
+                    >{`DashBoard`}</NavLink>
+                    <NavLink
+                      to={`/users`}
+                      className={`navLinks`}
+                    >{`UsersDashBoard`}</NavLink>
+                  </Box>
+                )}
                 <Box className={`headerButtonArea`}>
                   {isLogIn && !window.localStorage.getItem("accessToken") ? (
                     <Box className={`buttonWrapper`}>
@@ -64,19 +78,17 @@ export default function ReactRouting() {
                 </Box>
               </Box>
               <Modal isOpen={isOpen} title={`Login Form`} setIsOpen={setIsOpen}>
-                <LoginForm
-                  linkRef={`/dashboard`}
-                  setIsOpen={setIsOpen}
-                  setIsLogIn={setIsLogIn}
-                />
+                <LoginForm setIsOpen={setIsOpen} setIsLogIn={setIsLogIn} />
               </Modal>
             </Box>
           </Toolbar>
         </Box>
         <Switch>
+          <Route path={`/users/:id`} component={UserDetail} />
+          <Route path={`/users`} component={UserDashboard} />
           <Route path="/dashboard/:id" component={ProductDetail} />
           <Route path="/dashboard" component={DashBoard} />
-          <Route path="/" />
+          <Route path="/" component={Home} />
         </Switch>
       </Router>
     </div>

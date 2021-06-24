@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Shivansh",
+      "image": "https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg",
+      "email": "shivansh@gmail.com",
+      "gender": "Male",
+      "profession": "Developer"
+    },
+    {
+      "id": 2,
+      "name": "Mohit",
+      "image": "https://cdn2.vectorstock.com/i/1000x1000/49/86/man-character-face-avatar-in-glasses-vector-17074986.jpg",
+      "email": "mohit@gmail.com",
+      "gender": "Male",
+      "profession": "Developer"
+    },
+    {
+      "id": 3,
+      "name": "AnshikaHello",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGwSTvN7cBwsaA0izTzKk37pmjMrCU6pcm9Q&usqp=CAU",
+      "email": "anshika@gmail.com",
+      "gender": "Female",
+      "profession": "Doctor"
+    },
+    {
+      "id": 4,
+      "name": "Aanchal",
+      "image": "https://cdn0.iconfinder.com/data/icons/sexy-portrait-girl-avatar-cute-beautiful-young-gir/283/female-138-512.png",
+      "email": "aanchal@gmail.com",
+      "gender": "Female",
+      "profession": "HR MAnager"
+    },
+    {
+      "id": 5,
+      "name": "Ankur",
+      "image": "https://previews.123rf.com/images/yupiramos/yupiramos1712/yupiramos171217688/92110199-elegant-businessman-avatar-character-vector-illustration-design.jpg",
+      "email": "ankur@gmail.com",
+      "gender": "Male",
+      "profession": "Lawyer"
+    },
+    {
+      "id": 6,
+      "name": "Shirish",
+      "image": "https://upsolacademy.com/wp-content/uploads/2020/07/portrait-young-man-beard-hair-style-male-avatar-vector-portrait-young-man-beard-hair-style-male-avatar-105082137.jpg",
+      "email": "shirish@gmail.com",
+      "gender": "Male",
+      "profession": "Business Manager"
+    }
+  ]
+}

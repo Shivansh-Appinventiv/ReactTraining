@@ -1,6 +1,5 @@
 import { Box, Button, TextField } from "@material-ui/core";
 import React from "react";
-import { useHistory } from "react-router-dom";
 import { useForm, Form } from "../components/useForm";
 
 const initialValues = {
@@ -18,10 +17,8 @@ function generateToken(n) {
 }
 
 export default function LoginForm(props) {
-  const { linkRef, setIsOpen,setIsLogIn } = props;
-  const history = useHistory();
-  const { values,handleChange, errors, setErrors } =
-    useForm(initialValues);
+  const { setIsOpen, setIsLogIn } = props;
+  const { values, handleChange, errors, setErrors } = useForm(initialValues);
 
   const validate = () => {
     let temp = {};
@@ -36,7 +33,6 @@ export default function LoginForm(props) {
   const handleSubmit = () => {
     if (validate()) {
       setIsOpen(false);
-      history.push(linkRef);
       window.localStorage.setItem(
         "accessToken",
         JSON.stringify(generateToken(16))
@@ -44,6 +40,7 @@ export default function LoginForm(props) {
       setIsLogIn(false);
     }
   };
+
   return (
     <Box>
       <Form>

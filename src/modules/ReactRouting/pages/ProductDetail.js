@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { products } from "../products";
 
 export default function ProductDetail(props) {
-  console.log(props);
+  //console.log(props);
   let { id } = useParams();
   const item = products[id - 1];
   return (
