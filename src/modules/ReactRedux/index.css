@@ -1,0 +1,32 @@
+.reduxContainer {
+  width: 100%;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.counterText{
+    margin: 20px;
+}
+
+.colorWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 50px;
+  padding: 20px;
+}
+
+.colorArea{
+ display: flex;
+ flex-direction: column;
+ min-height: 200px;
+ align-items: center;
+ justify-content: center;
+ font-size: large;
+}

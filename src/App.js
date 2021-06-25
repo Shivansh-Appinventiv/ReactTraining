@@ -9,7 +9,8 @@ import "./App.css";
 //import MovieTemplate from "./modules/MovieTemplate";
 //import LogicalAbility from "./modules/Logical_Ability";
 //import LifeCycleMethods from "./modules/lifeCycleMethods";
-import ReactRouting from "./modules/ReactRouting";
+//import ReactRouting from "./modules/ReactRouting";
+import ReactRedux from "./modules/ReactRedux";
 class App extends React.Component {
   render() {
     return (
@@ -22,8 +23,9 @@ class App extends React.Component {
         <Assignment5 />
         <MovieTemplate />
         <LogicalAbility />
-        <LifeCycleMethods /> */}
-        <ReactRouting />
+        <LifeCycleMethods />
+        <ReactRouting /> */}
+        <ReactRedux />
       </div>
     );
   }
