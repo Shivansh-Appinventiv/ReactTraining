@@ -10,7 +10,8 @@ import "./App.css";
 //import LogicalAbility from "./modules/Logical_Ability";
 //import LifeCycleMethods from "./modules/lifeCycleMethods";
 //import ReactRouting from "./modules/ReactRouting";
-import ReactRedux from "./modules/ReactRedux";
+//import ReactRedux from "./modules/ReactRedux";
+import ContextApi from "./modules/ContextApi";
 class App extends React.Component {
   render() {
     return (
@@ -24,8 +25,9 @@ class App extends React.Component {
         <MovieTemplate />
         <LogicalAbility />
         <LifeCycleMethods />
-        <ReactRouting /> */}
-        <ReactRedux />
+        <ReactRouting />
+        <ReactRedux /> */}
+        <ContextApi />
       </div>
     );
   }

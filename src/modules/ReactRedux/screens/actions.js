@@ -25,7 +25,7 @@ export const getDataAsync = (number) => {
   return (dispatch) => {
     setTimeout(() => {
       dispatch(decrementNumber(number));
-    }, 2000);
+    }, 5000);
   };
 };
 
