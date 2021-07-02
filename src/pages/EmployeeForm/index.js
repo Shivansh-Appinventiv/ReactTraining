@@ -6,6 +6,7 @@ import Input from "../../components/Control/Input";
 import Select from "../../components/Control/Select";
 import countries from "../../data/countries.json";
 import DateTimePicker from "../../components/Control/DateTimePicker";
+import Button from "../../components/Control/Button";
 
 export default function EmployeeForm() {
   const initialValues = {
@@ -111,6 +112,10 @@ export default function EmployeeForm() {
               </Grid>
               <Grid item xs={12}>
                 <Input name="designation" label={`Designation`} />
+              </Grid>
+
+              <Grid item xs={12}>
+                <Button>{`Submit`}</Button>
               </Grid>
             </Grid>
           </Form>
