@@ -12,6 +12,7 @@ export default function CustomButton(props) {
   };
 
   const attributes = {
+    ...rest,
     variant: "contained",
     color: "primary",
     fullWidth: true,

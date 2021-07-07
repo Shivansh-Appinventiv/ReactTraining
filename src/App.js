@@ -1,12 +1,12 @@
 import "./App.css";
-import Header from "./components/Header";
-import EmployeeForm from "./pages/EmployeeForm";
+//import FormikTask from "./modules/Formik_Assignment";
+import UiSuntexx from "./modules/Ui_Assignment";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <EmployeeForm />
+      {/* <FormikTask /> */}
+      <UiSuntexx />
     </div>
   );
 }
