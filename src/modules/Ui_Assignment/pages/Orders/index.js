@@ -1,12 +1,12 @@
 import React from "react";
 import SidePanel from "../../component/Drawer";
 import Header from "../../component/Header";
-import useStyle from "../../useStyle";
 import EditIcon from "@material-ui/icons/Edit";
 import AddIcon from "@material-ui/icons/Add";
 import SearchIcon from "@material-ui/icons/Search";
 import TuneIcon from "@material-ui/icons/Tune";
 import useTable from "../../component/useTable";
+import useOrderStyle from "./orderStyle";
 import {
   Box,
   Button,
@@ -132,6 +132,45 @@ const records = [
     "Yard",
     "I am remark"
   ),
+  createRows(
+    counter++,
+    "A123",
+    "XXXXXXX",
+    "Yellow",
+    "5756",
+    "12349876123",
+    "-",
+    "-",
+    "300.00",
+    "Yard",
+    "I am remark"
+  ),
+  createRows(
+    counter++,
+    "A123",
+    "XXXXXXX",
+    "Yellow",
+    "5756",
+    "12349876123",
+    "-",
+    "-",
+    "300.00",
+    "Yard",
+    "I am remark"
+  ),
+  createRows(
+    counter++,
+    "A123",
+    "XXXXXXX",
+    "Yellow",
+    "5756",
+    "12349876123",
+    "-",
+    "-",
+    "300.00",
+    "Yard",
+    "I am remark"
+  ),
 ];
 
 function RoundNumberIcon() {
@@ -181,7 +220,7 @@ function TableContent() {
                 tabIndex={-1}
                 key={row.sequence}
                 selected={isItemSelected}
-                style={{backgroundColor: isItemSelected ? "aqua" : null}}
+                style={{ backgroundColor: isItemSelected ? "aqua" : null }}
               >
                 <TableCell padding={`checkbox`}>
                   <Checkbox
@@ -218,31 +257,73 @@ function TableContent() {
   );
 }
 
-function Content() {
-  const {
-    contentCss,
-    workOrder,
-    sideTitle,
-    searchField,
-    textField,
-    requestMaterialContainer,
-    searchIcon,
-    searchAddContainer,
-    selectedContainer,
-    filterButton,
-    deleteButton,
-  } = useStyle();
+function CaptionBox() {
   return (
-    <Box className={contentCss}>
-      <Grid container item xs={12}>
-        <Grid item xs={12}>
-          <Paper className={workOrder}>{`Work Orders / A12467322`}</Paper>
+    <Box>
+      {captions.map((obj, index) => (
+        <Box key={index} style={{ margin: "8px 0" }}>
+          <Typography variant={`caption`} display={`block`}>
+            {`${Object.keys(obj)[0]} *`}
+          </Typography>
+          <Typography
+            variant={`body1`}
+            display={`block`}
+            style={{ fontWeight: "bold" }}
+          >
+            {Object.values(obj)[0]}
+          </Typography>
+        </Box>
+      ))}
+    </Box>
+  );
+}
+
+function StampBox() {
+  return (
+    <Box
+      style={{
+        height: "200px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+      }}
+    >
+      {stamp.map((obj, index) => (
+        <Typography
+          key={index}
+          variant={`body2`}
+          display={`block`}
+          style={{ color: "grey", margin: "5px 0" }}
+        >
+          {`${Object.keys(obj)[0]}: ${Object.values(obj)[0]}`}
+        </Typography>
+      ))}
+    </Box>
+  );
+}
+
+function Content() {
+  const {classes} = useOrderStyle();
+  return (
+    <Box className={classes.contentCss}>
+      <Grid container>
+        <Grid item xs={12} lg={12} md={12}>
+          <Paper className={classes.workOrder}>{`Work Orders / A12467322`}</Paper>
         </Grid>
-        <Grid container item xs={12} spacing={2} style={{ margin: "5px 2px" }}>
-          <Grid item xs={3}>
+        <Grid
+          item
+          xs={12}
+          lg={12}
+          md={12}
+          container
+          spacing={2}
+          style={{ margin: "2px 2px" }}
+        >
+          <Grid item xs={12} lg={3} md={3}>
             <Paper>
-              <Box>
-                <Box className={sideTitle}>
+              <Grid item xs={12} style={{ padding: "16px 16px 8px 16px" }}>
+                <Box>
                   <Typography
                     variant={`h5`}
                     style={{ marginBottom: "10px" }}
@@ -252,64 +333,34 @@ function Content() {
                     color={`primary`}
                     startIcon={<EditIcon />}
                   >{`Edit`}</Button>
-                  <Divider style={{ margin: "8px 0" }} />
                 </Box>
-
-                <Box style={{ padding: "0 15px" }}>
-                  {captions.map((obj, index) => (
-                    <Box key={index} style={{ margin: "8px 0" }}>
-                      <Typography variant={`caption`} display={`block`}>
-                        {`${Object.keys(obj)[0]} *`}
-                      </Typography>
-                      <Typography
-                        variant={`body1`}
-                        display={`block`}
-                        style={{ fontWeight: "bold" }}
-                      >
-                        {Object.values(obj)[0]}
-                      </Typography>
-                    </Box>
-                  ))}
-
-                  <Box style={{ padding: "30px 0 78px 0" }}>
-                    {stamp.map((obj, index) => (
-                      <Typography
-                        key={index}
-                        variant={`body2`}
-                        display={`block`}
-                        style={{ color: "grey", margin: "5px 0" }}
-                      >
-                        {`${Object.keys(obj)[0]}: ${Object.values(obj)[0]}`}
-                      </Typography>
-                    ))}
-                  </Box>
-                </Box>
-              </Box>
+                <Divider style={{ margin: "8px 0 24px 0" }} />
+                <CaptionBox />
+                <StampBox />
+              </Grid>
             </Paper>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={12} lg={9} md={9}>
             <Paper>
-              <Box className={requestMaterialContainer}>
-                <Box className={searchAddContainer}>
-                  <Box>
-                    <Typography variant={`h5`}>{`Request Material`}</Typography>
+              <Grid item xs={12} style={{ padding: "16px 16px 8px 16px" }}>
+                <Box>
+                  <Typography variant={`h5`}>{`Request Material`}</Typography>
+                </Box>
+                <Box style={{ display: "flex", margin: "10px 0" }}>
+                  <Box className={classes.searchField}>
+                    <SearchIcon className={classes.earchIcon} />
+                    <input
+                      type={`text`}
+                      placeholder={`Search`}
+                      name={`search`}
+                      className={classes.textField}
+                    />
                   </Box>
-                  <Box style={{ display: "flex", margin: "10px 0" }}>
-                    <Box className={searchField}>
-                      <SearchIcon className={searchIcon} />
-                      <input
-                        type={`text`}
-                        placeholder={`Search`}
-                        name={`search`}
-                        className={textField}
-                      />
-                    </Box>
-                    <Button
-                      variant={`outlined`}
-                      color={`primary`}
-                      startIcon={<AddIcon fontSize={`large`} />}
-                    >{`Add`}</Button>
-                  </Box>
+                  <Button
+                    variant={`outlined`}
+                    color={`primary`}
+                    startIcon={<AddIcon fontSize={`large`} />}
+                  >{`Add`}</Button>
                 </Box>
                 <Divider />
                 <Box
@@ -320,12 +371,12 @@ function Content() {
                   }}
                 >
                   <Box style={{ width: "100%", display: "flex" }}>
-                    <Box className={selectedContainer}>{`1 Selected`}</Box>
+                    <Box className={classes.selectedContainer}>{`1 Selected`}</Box>
                     <Box>
                       <Button
                         variant={`outlined`}
                         color={`default`}
-                        className={deleteButton}
+                        className={classes.deleteButton}
                       >{`Delete`}</Button>
                     </Box>
                   </Box>
@@ -335,12 +386,14 @@ function Content() {
                       color={`default`}
                       startIcon={<TuneIcon />}
                       endIcon={<RoundNumberIcon fontSize={`large`} />}
-                      className={filterButton}
+                      className={classes.filterButton}
                     >{`Filter`}</Button>
                   </Box>
                 </Box>
-                <TableContent />
-              </Box>
+                <Box style={{ overflow: "auto" }}>
+                  <TableContent />
+                </Box>
+              </Grid>
             </Paper>
           </Grid>
         </Grid>
@@ -350,10 +403,18 @@ function Content() {
 }
 
 export default function Orders() {
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
   return (
     <>
-      <Header />
-      <SidePanel />
+      <Header handleDrawerToggle={handleDrawerToggle} />
+      <SidePanel
+        mobileOpen={mobileOpen}
+        handleDrawerToggle={handleDrawerToggle}
+      />
       <Content />
     </>
   );

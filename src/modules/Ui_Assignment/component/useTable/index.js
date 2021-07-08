@@ -116,6 +116,7 @@ export default function useTable(headCells, records, setSelected, selected) {
               checked={rowCount > 0 && numSelected === rowCount}
               onChange={handleSelectAllClick}
               inputProps={{ "aria-label": "select all #" }}
+              color={"primary"}
               indeterminateIcon={
                 <IndeterminateCheckBoxOutlinedIcon color={`primary`} />
               }

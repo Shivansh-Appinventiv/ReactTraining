@@ -4,7 +4,7 @@ import Orders from "./pages/Orders";
 
 export default function UiSuntexx() {
   return (
-    <Box>
+    <Box style={{ background: "#efeff3" }}>
       <Orders />
     </Box>
   );

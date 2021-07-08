@@ -1,22 +1,40 @@
-import useStyle from "../../useStyle";
 import React from "react";
-import BusinessIcon from "@material-ui/icons/Business";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import AppsIcon from "@material-ui/icons/Apps";
+import MenuIcon from "@material-ui/icons/Menu";
+import useHeaderStyle from "./headerStyle";
+import useImages from "./images";
+import {
+  AppBar,
+  Avatar,
+  Box,
+  IconButton,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 
-import { AppBar, Avatar, Box, Toolbar, Typography } from "@material-ui/core";
-export default function Header() {
-  const {
-    headerCss,
-    logoIcon,
-    logoText,
-    logoContainer,
-    accountContainer,
-  } = useStyle();
+function LogoImageContainer() {
+  const { classes } = useHeaderStyle();
+  const { LogoImage } = useImages();
+  return (
+    <Box className={classes.logoWrapper}>
+      <Box className={classes.logoIcon}>
+        <LogoImage />
+      </Box>
+    </Box>
+  );
+}
+
+export default function Header({ handleDrawerToggle }) {
+  const { classes } = useHeaderStyle();
+  const theme = useTheme();
+  const hideIcon = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <>
-      <AppBar className={headerCss}>
+      <AppBar className={classes.headerCss}>
         <Toolbar>
           <Box
             style={{
@@ -25,16 +43,22 @@ export default function Header() {
               justifyContent: "space-between",
             }}
           >
-            <Box className={logoContainer}>
-              <Box className={logoIcon}>
-                <BusinessIcon fontSize={`large`} />
-              </Box>
-              <Box className={logoText}>
+            <Box className={classes.logoContainer}>
+              <IconButton
+                color={"inherit"}
+                aria-label={"open-drawer"}
+                onClick={handleDrawerToggle}
+                style={hideIcon ? { display: "none" } : { display: "block" }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <LogoImageContainer />
+              <Box className={classes.logoText}>
                 <Typography>{`Suntexx`}</Typography>
                 <ArrowDropDownIcon />
               </Box>
             </Box>
-            <Box className={accountContainer}>
+            <Box className={classes.accountContainer}>
               <Box>
                 <SettingsOutlinedIcon fontSize={`large`} />
               </Box>
