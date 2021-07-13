@@ -2,6 +2,7 @@ import React from "react";
 import { Input, Password } from "../../component/Controls/Input";
 import Form from "../../component/Form";
 import { getLoginResult } from "./actions";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import {
   Box,
@@ -11,8 +12,10 @@ import {
   Grid,
   Typography,
 } from "@material-ui/core";
+import TokenPage from "../TokenPage";
 
 export default function LoginPage() {
+  const dispatch = useDispatch();
   const initialValues = {
     username: "",
     password: "",
@@ -32,10 +35,10 @@ export default function LoginPage() {
       username: values.username,
       password: values.password,
     };
-    getLoginResult(obj);
+    dispatch(getLoginResult(obj));
   };
   return (
-    <Box>
+    <Box style={{width: "100%"}}>
       <Grid container xs={12}>
         <Box style={{ width: "320px", margin: "0 auto" }}>
           <Grid item xs={12}>
@@ -117,6 +120,7 @@ export default function LoginPage() {
             </Box>
           </Grid>
         </Box>
+        <TokenPage />
       </Grid>
     </Box>
   );

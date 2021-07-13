@@ -17,8 +17,8 @@ export const getLoginResult = (data) => {
   return (dispatch) => {
     setTimeout(async () => {
       const result = await axios.post(url, obj, headers);
-      console.log(result);
-      dispatch(postLogin(result.data));
+      console.log(result.data.data);
+      dispatch(postLogin(result.data.data));
     }, 1000);
   };
 };
