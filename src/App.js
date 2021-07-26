@@ -1,5 +1,6 @@
 import "./App.css";
-import FramerMotion from "./modules/Framer_Motion";
+import ReactMoment from "./modules/react-moment";
+//import FramerMotion from "./modules/Framer_Motion";
 //import Charts from "./modules/Charts";
 //import Todo from "./modules/Todo";
 //import FormikTask from "./modules/Formik_Assignment";
@@ -12,7 +13,8 @@ function App() {
       {/* <UiSuntexx /> */}
       {/* <Todo /> */}
       {/* <Charts /> */}
-      <FramerMotion />
+      {/* <FramerMotion /> */}
+      <ReactMoment />
     </div>
   );
 }
